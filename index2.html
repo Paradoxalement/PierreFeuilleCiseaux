@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeu Papier, Cailloux, Ciseaux</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .resultat {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Jeu Papier, Cailloux, Ciseaux</h1>
+  
+  <div>
+    <button onclick="jouer('papier')">Papier</button>
+    <button onclick="jouer('cailloux')">Cailloux</button>
+    <button onclick="jouer('ciseaux')">Ciseaux</button>
+  </div>
+
+  <div class="resultat" id="resultat">
+    <!-- Le résultat du jeu s'affichera ici -->
+  </div>
+
+  <script>
+    function jouer(choixJoueur) {
+      // Choix de l'ordinateur
+      const choixOrdinateur = ["papier", "cailloux", "ciseaux"][Math.floor(Math.random() * 3)];
+
+      // Détermination du gagnant
+      let gagnant;
+      if (choixJoueur === choixOrdinateur) {
+        gagnant = "Egalité !";
+      } else if (
+        (choixJoueur === "papier" && choixOrdinateur === "cailloux") ||
+        (choixJoueur === "cailloux" && choixOrdinateur === "ciseaux") ||
+        (choixJoueur === "ciseaux" && choixOrdinateur === "papier")
+      ) {
+        gagnant = "Vous avez gagné !";
+      } else {
+        gagnant = "L'ordinateur a gagné !";
+      }
+
+      // Affichage du résultat dans la page HTML
+      document.getElementById("resultat").innerHTML = `
+        <p>Votre choix : ${choixJoueur}</p>
+        <p>Choix de l'ordinateur : ${choixOrdinateur}</p>
+        <p><strong>${gagnant}</strong></p>
+      `;
+    }
+  </script>
+</body>
+</html>
