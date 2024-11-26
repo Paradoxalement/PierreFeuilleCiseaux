@@ -1,6 +1,9 @@
 let cj;
 let co;
 let cnbo;
+const Ciseaux= document.querySelector("Ciseaux")
+const Feuille = document.getElementById("Feuille")
+const Pierre = document.querySelector("Pierre")
 
 
 function Jouer() {
