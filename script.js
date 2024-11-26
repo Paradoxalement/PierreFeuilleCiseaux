@@ -65,7 +65,7 @@ else {
     res = "L'ordinateur a gagné"
 }
 }
-// Etape 4
+// Etape 4  afficher
 function alerte () {
     alert (" Le joueur a fait " + cj + " et l'ordinateur a fait " + co + ". Donc:" + res)
 }
